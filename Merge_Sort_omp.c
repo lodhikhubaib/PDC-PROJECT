@@ -72,7 +72,7 @@ void merge(int *X, int left, int mid, int right, int *tmp) {
 
 void mergeSort(int *X, int n, int *tmp) {
     for (int current_size = 1; current_size < n; current_size = 2 * current_size) {
-#pragma omp parallel for schedule(dynamic)
+#pragma omp parallel for schedule(dynamic)//
         for (int left_start = 0; left_start < n; left_start += 2 * current_size) {
             int mid = left_start + current_size - 1;
             int right_end = (left_start + 2 * current_size - 1 < n - 1) ? (left_start + 2 * current_size - 1) : (n - 1);
