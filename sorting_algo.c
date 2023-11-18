@@ -1,6 +1,6 @@
 // 		mpirun -n <number_of_nodes> <executive_file_name> <sorting_technique{Q,M,R}>
 // 		<printing/not printing data{P,N}> <size_of_array>
-
+// all codes
 #include<stdio.h>
 #include<mpi.h>
 #include<stdlib.h>
