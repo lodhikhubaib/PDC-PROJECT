@@ -104,6 +104,24 @@ void printArray(int *arr, int size) {
     printf("\n");
 }
 
+void printArrayToFile(unsigned int *arr, int size, const char *filename) {
+    FILE *file = fopen(filename, "w");
+    if (file == NULL) {
+        perror("Error opening file");
+        exit(EXIT_FAILURE);
+    }
+
+    for (int i = 0; i < size; i++) {
+        if (fprintf(file, "%d ", arr[i]) < 0) {
+            perror("Error writing to file");
+            fclose(file);
+            exit(EXIT_FAILURE);
+        }
+    }
+
+    fclose(file);
+}
+
 int main(int argc, char *argv[]) {
     srand(123456);
     int N = (argc > 1) ? atoi(argv[1]) : MAX;
@@ -159,7 +177,7 @@ int main(int argc, char *argv[]) {
         printOutput(l, time_serial, time_parallel, speedup);
 
         if(print==1){
-            printArray(X,l);
+            printArrayToFile(X, l, ",Merge_sorted_output.txt");
         }
 
         free(X);
