@@ -152,7 +152,7 @@ int main(int argc, char *argv[]) {
         printOutput(l, time_serial, time_parallel, speedup);
 
         if (print == 1) {
-            printArrayToFile(arr, l, "sorted_output.txt");
+            printArrayToFile(arr, l, "Count_sorted_output.txt");
         }
 
         free(X);
