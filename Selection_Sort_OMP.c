@@ -124,7 +124,7 @@ int main(int argc, char *argv[]) {
     omp_set_dynamic(1); // Disable dynamic adjustment of threads
     srand(123456);
 
-    printf("-----------------------------------------------------Counting Sort----------------------------------------------\n\n");
+    printf("-----------------------------------------------------Selection Sort----------------------------------------------\n\n");
     printf("%10s |      %10s            |       %10s           | %10s \n\n", "SIZE", "SERIAL_TIME", "PARALLEL_TIME", "SPEEDUP");
 
     unsigned int *X, *arr;
